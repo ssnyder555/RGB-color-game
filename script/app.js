@@ -1,10 +1,14 @@
 let colors = generateRandomColors(6);
-
 let squares = document.querySelectorAll(".square");
 let pickedColor = pickColor();
 let colorDisplay = document.getElementById('colorDisplay');
 let messageDisplay = document.querySelector('#message');
 let h1 = document.querySelector("h1");
+let resetButton = document.querySelector("#reset");
+
+resetButton.addEventListener('click', function(){
+  alert('clicked reset button')
+})
 
 colorDisplay.textContent = pickedColor;
 
