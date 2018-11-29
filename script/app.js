@@ -18,8 +18,30 @@ for (let i = 0; i < modeButtons.length; i++ {
     modeButtons[0].classList.remove('selected');
     modeButtons[1].classList.remove('selected');
     this.classList.add('selected');
-  })
+
+    // figureout how many squares to show
+    // pick new colors
+    // pick a new pickedColor
+    // update the page to reflect the changes
+  });
 })
+
+function reset(){
+  colors = generateRandomColors(numSquares);
+  // pick a new random color from array
+  pickedColor = pickColor();
+  // change color display to match picked color
+  colorDisplay.textContent = pickedColor;
+  this.textContent = 'New Colors';
+
+  messageDisplay.textContent = "";
+  // change colrs of squares
+  for (let i = 0; i < squares.length; i++){
+    squares[i].style.background = colors[i];
+  }
+  h1.style.background = 'darkgrey';
+
+}
 
 // this is the long way: down bellow
 // let easyBtn = document.querySelector('#easyBtn');
