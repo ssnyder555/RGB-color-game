@@ -6,41 +6,58 @@ let colorDisplay = document.getElementById('colorDisplay');
 let messageDisplay = document.querySelector('#message');
 let h1 = document.querySelector("h1");
 let resetButton = document.querySelector("#reset");
-let easyBtn = document.querySelector('#easyBtn');
-let hardBtn = document.querySelector('#hardBtn');
+// this is the way to combine both easy and hard buttons
+let modeButtons = document.querySelectorAll('.mode');
+// now we are going to loop through our buttons
+// this way is better bc if we want to add harder difficulty
+// in the future. we dont have to add extra listiners
+// bc we are selecting all of them
 
+for (let i = 0; i < modeButtons.length; i++ {
+  modeButtons[i].addEventListener('click', function(){
+    modeButtons[0].classList.remove('selected');
+    modeButtons[1].classList.remove('selected');
+    this.classList.add('selected');
+  })
+})
 
-easyBtn.addEventListener('click', function(){
-  hardBtn.classList.remove('selected');
-  easyBtn.classList.add('selected');
-  numSquares = 3;
-  colors = generateRandomColors(numSquares);
-  pickedColor = pickColor();
-  colorDisplay.textContent = pickedColor;
-  // loop through to get 3 squares in game
-  for (let i = 0; i < squares.length; i++){
-    if(colors[i]){
-      squares[i].style.background = colors[i];
-    } else {
-      squares[i].style.display = 'none';
-    }
-  }
+// this is the long way: down bellow
+// let easyBtn = document.querySelector('#easyBtn');
+// let hardBtn = document.querySelector('#hardBtn');
 
-});
-hardBtn.addEventListener('click', function(){
-  hardBtn.classList.add('selected');
-  easyBtn.classList.remove('selected');
-  numSquares = 6;
-  colors = generateRandomColors(numSquares);
-  pickedColor = pickColor();
-  colorDisplay.textContent = pickedColor;
-  // loop through to get 3 squares in game
-  for (let i = 0; i < squares.length; i++){
-      squares[i].style.background = colors[i];
-      squares[i].style.display = 'block';
+// there is anothew way to loop through the buttons:
 
-  }
-});
+// easyBtn.addEventListener('click', function(){
+//   hardBtn.classList.remove('selected');
+//   easyBtn.classList.add('selected');
+//   numSquares = 3;
+//   colors = generateRandomColors(numSquares);
+//   pickedColor = pickColor();
+//   colorDisplay.textContent = pickedColor;
+//   // loop through to get 3 squares in game
+//   for (let i = 0; i < squares.length; i++){
+//     if(colors[i]){
+//       squares[i].style.background = colors[i];
+//     } else {
+//       squares[i].style.display = 'none';
+//     }
+//   }
+//
+// });
+// hardBtn.addEventListener('click', function(){
+//   hardBtn.classList.add('selected');
+//   easyBtn.classList.remove('selected');
+//   numSquares = 6;
+//   colors = generateRandomColors(numSquares);
+//   pickedColor = pickColor();
+//   colorDisplay.textContent = pickedColor;
+//   // loop through to get 3 squares in game
+//   for (let i = 0; i < squares.length; i++){
+//       squares[i].style.background = colors[i];
+//       squares[i].style.display = 'block';
+//
+//   }
+// });
 resetButton.addEventListener('click', function(){
   // generate all new colors
   colors = generateRandomColors(numSquares);
