@@ -58,6 +58,7 @@ button {
   color: darkgrey;
   letter-spacing: 1px;
   font-size: inherit;
+  transition: all 2.0s;
 }
 
  button:hover {
