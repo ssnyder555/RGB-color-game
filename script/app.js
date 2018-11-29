@@ -14,6 +14,13 @@ easyBtn.addEventListener('click', function(){
   colors = generateRandomColors(3);
   pickedColor = pickColor();
   colorDisplay.textContent = pickedColor;
+  // loop through to get 3 squares in game
+  for (let i = 0; i < squares.length; i++){
+    if(colors[i]){
+      squares[i].style.background = colors[i];
+    }
+  }
+
 });
 hardBtn.addEventListener('click', function(){
   hardBtn.classList.add('selected');
