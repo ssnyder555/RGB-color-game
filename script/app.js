@@ -13,7 +13,7 @@ let modeButtons = document.querySelectorAll('.mode');
 // in the future. we dont have to add extra listiners
 // bc we are selecting all of them
 
-for (let i = 0; i < modeButtons.length; i++ {
+for (let i = 0; i < modeButtons.length; i++) {
   modeButtons[i].addEventListener('click', function(){
     modeButtons[0].classList.remove('selected');
     modeButtons[1].classList.remove('selected');
@@ -38,7 +38,7 @@ for (let i = 0; i < modeButtons.length; i++ {
     // pick a new pickedColor
     // update the page to reflect the changes
   });
-})
+}
 
 function reset(){
   colors = generateRandomColors(numSquares);
