@@ -2,7 +2,6 @@ body {
   background-color: #232323;
 }
 
-
 .square {
     width: 30%;
     background-color: purple;
@@ -12,18 +11,21 @@ body {
 }
 
 #container {
-  margin: 0 auto;
+  margin: 0px auto;
   max-width: 600px;
 }
+
 h1 {
   color: white;
 }
 
-
-}
 #stripe {
-  background-color: white;
-  height: 30px;
-  text-align: center;
+	background: white;
+	height: 30px;
+	text-align: center;
+	color: black;
+}
 
+.selected {
+  background: blue;
 }
