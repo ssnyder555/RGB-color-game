@@ -19,6 +19,20 @@ for (let i = 0; i < modeButtons.length; i++ {
     modeButtons[1].classList.remove('selected');
     this.classList.add('selected');
 
+// this is another way to do it on one line
+// called a terenery operator: it takes in 3 parts:
+// 3 conditions
+    this.textContent === 'Easy' ? numSquares = 3: numSquares = 6;
+
+    // this is my old way of doing it
+
+    // if(this.textContent === 'Easy'){
+    //   numSquares = 3;
+    // } else {
+    //   numSquares = 6;
+    // }
+    reset();
+
     // figureout how many squares to show
     // pick new colors
     // pick a new pickedColor
@@ -32,16 +46,19 @@ function reset(){
   pickedColor = pickColor();
   // change color display to match picked color
   colorDisplay.textContent = pickedColor;
-  this.textContent = 'New Colors';
-
+  resetButton.textContent = 'New Colors';
   messageDisplay.textContent = "";
   // change colrs of squares
   for (let i = 0; i < squares.length; i++){
-    squares[i].style.background = colors[i];
+    if(colors[i]){
+      squares[i].style.background = colors[i];
+    } else {
+      squares[i].style.display = 'none';
+    }
   }
   h1.style.background = 'darkgrey';
 
-}
+};
 
 // this is the long way: down bellow
 // let easyBtn = document.querySelector('#easyBtn');
