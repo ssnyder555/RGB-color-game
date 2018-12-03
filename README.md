@@ -18,5 +18,5 @@
 
 
 ![alt text](./images/easy.png)
-![alt text](./images/finish.png)
 ![alt text](./images/hard.png)
+![alt text](./images/finish.png)
